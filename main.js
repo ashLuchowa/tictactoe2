@@ -113,6 +113,7 @@ const gameConclusion = (() => {
       blurBackground.style.display = "flex";
       blurBackground.style.filter = "blur(8px)";
       nextRoundModal.style.display = "flex";
+      nextBtn.textContent = `Round ${gameStart.gameRound}`;
     }, 400);
 
     nextBtn.addEventListener("click", () => {
