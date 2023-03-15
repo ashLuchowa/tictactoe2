@@ -14,13 +14,23 @@ const gameStart = (() => {
   const player2 = players("O", 0);
   let currentPlayer = player1;
   let gameRound = 1;
+  let player1Score = document.querySelector("#player1-score");
+  let player2Score = document.querySelector("#player2-score");
+  player1Score.classList.add("updateScoreUI");
 
-  return { gameBoardContent, player1, player2, gameRound, currentPlayer };
+  return {
+    gameBoardContent,
+    player1,
+    player2,
+    gameRound,
+    currentPlayer,
+    player1Score,
+    player2Score,
+  };
 })();
 
 //---- Game Operator Module ----//
 const gameOperator = (() => {
-
   //Click each square
   const setSquareClick = (squareId, row, col) => {
     const square = document.getElementById(squareId);
@@ -38,12 +48,12 @@ const gameOperator = (() => {
     //Change current player UI color
     if (gameStart.currentPlayer === gameStart.player1) {
       gameStart.currentPlayer = gameStart.player2;
-      // player1Score.classList.remove("updateScoreUI");
-      // player2Score.classList.add("updateScoreUI");
+      gameStart.player1Score.classList.remove("updateScoreUI");
+      gameStart.player2Score.classList.add("updateScoreUI");
     } else {
       gameStart.currentPlayer = gameStart.player1;
-      // player1Score.classList.add("updateScoreUI");
-      // player2Score.classList.remove("updateScoreUI");
+      gameStart.player1Score.classList.add("updateScoreUI");
+      gameStart.player2Score.classList.remove("updateScoreUI");
     }
     gameConclusion.winCondition(squareElement.textContent);
     console.log(gameStart.gameBoardContent);
@@ -80,7 +90,7 @@ const gameConclusion = (() => {
   }
 
   const playerWinResult = (playerID) => {
-    if(playerID === 'X') {
+    if (playerID === "X") {
       gameStart.player1.playerScore++;
     } else {
       gameStart.player2.playerScore++;
@@ -131,7 +141,7 @@ const updateUI = (() => {
     player1Score.classList.add("updateScoreUI");
     player1Score.textContent = `Player X: ${gameStart.player1.playerScore}`;
     player2Score.textContent = `Player O: ${gameStart.player2.playerScore}`;
-  }
+  };
 
   return { updateScore };
 })();
