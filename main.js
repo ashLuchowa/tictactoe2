@@ -101,11 +101,22 @@ const gameConclusion = (() => {
     }, 400);
 
     nextBtn.addEventListener("click", () => {
-      // resetMainBoard();
+      resetMainBoard();
       blurBackground.style.display = "none";
       nextRoundModal.style.display = "none";
     });
   };
 
-  return { winCondition };
+  //Reset Board
+  const resetMainBoard = () => {
+    gameStart.gameBoardContent = [
+      ["", "", ""],
+      ["", "", ""],
+      ["", "", ""],
+    ];
+    const squares = document.querySelectorAll(".square");
+    squares.forEach((square) => (square.textContent = ""));
+  };
+
+  return { winCondition, resetMainBoard };
 })();
