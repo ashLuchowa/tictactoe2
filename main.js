@@ -31,7 +31,8 @@ const gameOperator = (() => {
   //What happens for each square Function
   const handleSquareClick = (squareElement, row, col) => {
     if (squareElement.textContent === "") {
-      gameStart.gameBoardContent[row][col] = gameStart.player1.playerName;
+      gameStart.gameBoardContent[row][col] = gameStart.currentPlayer.playerName;
+      squareElement.textContent = gameStart.currentPlayer.playerName;
     }
     console.log(gameStart.gameBoardContent);
   };
