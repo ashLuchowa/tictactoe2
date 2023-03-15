@@ -63,5 +63,5 @@ const gameOperator = (() => {
   };
   setSquareClickEvents();
 
-  return { setSquareClick, handleSquareClick, setSquareClickEvents };
+  return { setSquareClick, handleSquareClick };
 })();
