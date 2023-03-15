@@ -88,7 +88,7 @@ const gameConclusion = (() => {
     || (gameStart.gameBoardContent[0][0] === playerID && gameStart.gameBoardContent[1][1] === playerID && gameStart.gameBoardContent[2][2] === playerID)
     || (gameStart.gameBoardContent[2][0] === playerID && gameStart.gameBoardContent[1][1] === playerID && gameStart.gameBoardContent[0][2] === playerID)) ? playerWinResult(playerID) : console.log('No');
   }
-  
+
   const playerWinResult = (playerID) => {
     if (playerID === "X") {
       gameStart.player1.playerScore++;
@@ -98,6 +98,9 @@ const gameConclusion = (() => {
     updateUI.updateScore();
     updateUI.updateRound();
     nextRoundBtn();
+
+    const playerWinText = document.querySelector(".next-round-btn h3");
+    playerWinText.textContent = `Player ${playerID} wins!`;
   };
 
   //Next Round Modal
