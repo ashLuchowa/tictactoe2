@@ -65,3 +65,33 @@ const gameOperator = (() => {
 
   return { setSquareClick, handleSquareClick };
 })();
+
+//Game Conclusion Module
+const gameConclusion = (() => {
+  const winCondition = (playerID) => {
+    ((gameStart.gameBoardContent[0][0] === playerID && gameStart.gameBoardContent[0][1] === playerID && gameStart.gameBoardContent[0][2] === playerID)
+    || (gameStart.gameBoardContent[1][0] === playerID && gameStart.gameBoardContent[1][1] === playerID && gameStart.gameBoardContent[1][2] === playerID)
+    || (gameStart.gameBoardContent[2][0] === playerID && gameStart.gameBoardContent[2][1] === playerID && gameStart.gameBoardContent[2][2] === playerID)
+    || (gameStart.gameBoardContent[0][0] === playerID && gameStart.gameBoardContent[1][0] === playerID && gameStart.gameBoardContent[2][0] === playerID)
+    || (gameStart.gameBoardContent[0][1] === playerID && gameStart.gameBoardContent[1][1] === playerID && gameStart.gameBoardContent[2][1] === playerID)
+    || (gameStart.gameBoardContent[0][2] === playerID && gameStart.gameBoardContent[1][2] === playerID && gameStart.gameBoardContent[2][2] === playerID)
+    || (gameStart.gameBoardContent[0][0] === playerID && gameStart.gameBoardContent[1][1] === playerID && gameStart.gameBoardContent[2][2] === playerID)
+    || (gameStart.gameBoardContent[2][0] === playerID && gameStart.gameBoardContent[1][1] === playerID && gameStart.gameBoardContent[0][2] === playerID)) ? playerWinResult(playerID) : console.log('No');
+  }
+
+  const playerWinResult = (playerID) => {
+    if(playerID === 'X') {
+      gameStart.player1.playerScore++;
+    } else {
+      gameStart.player2.playerScore++;
+    }
+  };
+  nextRoundBtn();
+
+  //Next Round Modal
+  const nextRoundBtn = () => {
+    
+  }
+
+  return { winCondition };
+})();
