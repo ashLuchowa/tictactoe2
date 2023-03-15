@@ -88,7 +88,7 @@ const gameConclusion = (() => {
     || (gameStart.gameBoardContent[0][0] === playerID && gameStart.gameBoardContent[1][1] === playerID && gameStart.gameBoardContent[2][2] === playerID)
     || (gameStart.gameBoardContent[2][0] === playerID && gameStart.gameBoardContent[1][1] === playerID && gameStart.gameBoardContent[0][2] === playerID)) ? playerWinResult(playerID) : console.log('No');
   }
-
+  
   const playerWinResult = (playerID) => {
     if (playerID === "X") {
       gameStart.player1.playerScore++;
@@ -96,7 +96,7 @@ const gameConclusion = (() => {
       gameStart.player2.playerScore++;
     }
     updateUI.updateScore();
-    // updateRound();
+    updateUI.updateRound();
     nextRoundBtn();
   };
 
@@ -139,6 +139,11 @@ const updateUI = (() => {
     gameStart.player1Score.textContent = `Player X: ${gameStart.player1.playerScore}`;
     gameStart.player2Score.textContent = `Player O: ${gameStart.player2.playerScore}`;
   };
+  const updateRound = () => {
+    const currentRound = document.querySelector("#current-round");
+    gameStart.gameRound++;
+    currentRound.textContent = `Round ${gameStart.gameRound}`;
+  };
 
-  return { updateScore };
+  return { updateScore, updateRound };
 })();
