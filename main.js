@@ -136,11 +136,8 @@ const gameConclusion = (() => {
 //---- Update UI for Round & Score Module ----//
 const updateUI = (() => {
   const updateScore = () => {
-    let player1Score = document.querySelector("#player1-score");
-    let player2Score = document.querySelector("#player2-score");
-    player1Score.classList.add("updateScoreUI");
-    player1Score.textContent = `Player X: ${gameStart.player1.playerScore}`;
-    player2Score.textContent = `Player O: ${gameStart.player2.playerScore}`;
+    gameStart.player1Score.textContent = `Player X: ${gameStart.player1.playerScore}`;
+    gameStart.player2Score.textContent = `Player O: ${gameStart.player2.playerScore}`;
   };
 
   return { updateScore };
