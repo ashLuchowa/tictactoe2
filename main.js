@@ -45,7 +45,7 @@ const gameOperator = (() => {
       // player1Score.classList.add("updateScoreUI");
       // player2Score.classList.remove("updateScoreUI");
     }
-    // winCondition(squareElement.textContent);
+    gameConclusion.winCondition(squareElement.textContent);
     console.log(gameStart.gameBoardContent);
   };
 
@@ -85,13 +85,27 @@ const gameConclusion = (() => {
     } else {
       gameStart.player2.playerScore++;
     }
+    nextRoundBtn();
   };
-  nextRoundBtn();
 
   //Next Round Modal
   const nextRoundBtn = () => {
-    
-  }
+    const blurBackground = document.querySelector(".blur-background");
+    const nextRoundModal = document.querySelector(".next-round-btn");
+    const nextBtn = document.querySelector(".next-round-btn button");
+
+    setTimeout(() => {
+      blurBackground.style.display = "flex";
+      blurBackground.style.filter = "blur(8px)";
+      nextRoundModal.style.display = "flex";
+    }, 400);
+
+    nextBtn.addEventListener("click", () => {
+      // resetMainBoard();
+      blurBackground.style.display = "none";
+      nextRoundModal.style.display = "none";
+    });
+  };
 
   return { winCondition };
 })();
