@@ -12,9 +12,10 @@ const gameStart = (() => {
   ];
   const player1 = players("X", 0);
   const player2 = players("O", 0);
+  let currentPlayer = player1;
   let gameRound = 1;
 
-  return { gameBoardContent, player1, player2, gameRound };
+  return { gameBoardContent, player1, player2, gameRound, currentPlayer };
 })();
 
 //Game Operator Module
