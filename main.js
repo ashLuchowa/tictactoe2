@@ -1,9 +1,9 @@
-//Default Player Object
+//++++ Default Player Object ++++//
 const players = (playerName, playerScore) => {
   return { playerName, playerScore };
 };
 
-//GameStart Module
+//---- GameStart Module ----//
 const gameStart = (() => {
   let gameBoardContent = [
     ["", "", ""],
@@ -18,7 +18,7 @@ const gameStart = (() => {
   return { gameBoardContent, player1, player2, gameRound, currentPlayer };
 })();
 
-//Game Operator Module
+//---- Game Operator Module ----//
 const gameOperator = (() => {
 
   //Click each square
@@ -66,7 +66,7 @@ const gameOperator = (() => {
   return { setSquareClick, handleSquareClick };
 })();
 
-//Game Conclusion Module
+//---- Game Conclusion Module ----//
 const gameConclusion = (() => {
   const winCondition = (playerID) => {
     ((gameStart.gameBoardContent[0][0] === playerID && gameStart.gameBoardContent[0][1] === playerID && gameStart.gameBoardContent[0][2] === playerID)
@@ -123,7 +123,7 @@ const gameConclusion = (() => {
   return { winCondition, resetMainBoard };
 })();
 
-//Update UI for Round & Score Module
+//---- Update UI for Round & Score Module ----//
 const updateUI = (() => {
   const updateScore = () => {
     let player1Score = document.querySelector("#player1-score");
