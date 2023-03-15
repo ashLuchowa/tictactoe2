@@ -20,6 +20,7 @@ const gameStart = (() => {
 
 //Game Operator Module
 const gameOperator = (() => {
+
   //Click each square
   const setSquareClick = (squareId, row, col) => {
     const square = document.getElementById(squareId);
@@ -34,6 +35,17 @@ const gameOperator = (() => {
       gameStart.gameBoardContent[row][col] = gameStart.currentPlayer.playerName;
       squareElement.textContent = gameStart.currentPlayer.playerName;
     }
+    //Change current player UI color
+    if (gameStart.currentPlayer === gameStart.player1) {
+      gameStart.currentPlayer = gameStart.player2;
+      // player1Score.classList.remove("updateScoreUI");
+      // player2Score.classList.add("updateScoreUI");
+    } else {
+      gameStart.currentPlayer = gameStart.player1;
+      // player1Score.classList.add("updateScoreUI");
+      // player2Score.classList.remove("updateScoreUI");
+    }
+    // winCondition(squareElement.textContent);
     console.log(gameStart.gameBoardContent);
   };
 
