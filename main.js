@@ -120,7 +120,11 @@ const gameConclusion = (() => {
     nextRoundBtn();
 
     const playerWinText = document.querySelector(".next-round-btn h3");
-    playerWinText.textContent = `Player ${playerID} wins!`;
+    if(playerID === 'X') {
+      playerWinText.textContent = `${getPlayer1Name.value} wins!`;
+    } else {
+      playerWinText.textContent = `${getPlayer2Name.value} wins!`;
+    }
   };
 
   //Next Round Modal
