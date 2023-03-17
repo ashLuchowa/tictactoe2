@@ -1,3 +1,7 @@
+const getPlayer1Name = document.querySelector('#player1');
+const getPlayer2Name = document.querySelector('#player2');
+const submitBtn = document.querySelector('#submit-btn');
+
 //++++ Default Player Object ++++//
 const players = (playerName, playerScore) => {
   return { playerName, playerScore };
@@ -27,6 +31,15 @@ const gameStart = (() => {
     player1Score,
     player2Score,
   };
+})();
+
+//Input player names and click play Module
+const updateName = (() => {
+  submitBtn.addEventListener('click', (e)=> {
+    e.preventDefault();
+    gameStart.player1Score.textContent = `${getPlayer1Name.value}: 0`;
+    gameStart.player2Score.textContent = `${getPlayer2Name.value}: 0`;
+  });
 })();
 
 //---- Game Operator Module ----//
