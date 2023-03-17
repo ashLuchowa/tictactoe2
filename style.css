@@ -22,15 +22,39 @@ body {
 /*---------------- TITLE ----------------*/
 .main-title {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-color: black;
 }
 
-.title-logo {
+.title-header {
   color: white;
-  font-size: 5vw;
+  font-size: 10vw;
+}
+
+form {
+  color: white;
+}
+
+form input {
+  padding-left: 4px;
+  height: 30px;
+  border: 0px;
+}
+
+#submit-btn {
+  color: white;
+  width: 100px;
+  cursor: pointer;
+  background-color: black;
+  border: 1px solid white;
+}
+
+#submit-btn:hover {
+  background-color: white;
+  color: black;
 }
 
 /*---------------- HEADER ----------------*/
