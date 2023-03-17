@@ -35,10 +35,17 @@ const gameStart = (() => {
 
 //Input player names and click play Module
 const updateName = (() => {
-  submitBtn.addEventListener('click', (e)=> {
+  submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     gameStart.player1Score.textContent = `${getPlayer1Name.value}: 0`;
     gameStart.player2Score.textContent = `${getPlayer2Name.value}: 0`;
+
+    if (getPlayer1Name.value === '') {
+      gameStart.player1Score.textContent = 'Player X: 0';
+    }
+    if (getPlayer2Name.value === '') {
+      gameStart.player2Score.textContent = 'Player O: 0';
+    }
   });
 })();
 
