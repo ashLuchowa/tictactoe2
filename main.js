@@ -164,8 +164,8 @@ const gameConclusion = (() => {
 //---- Update UI for Round & Score Module ----//
 const updateUI = (() => {
   const updateScore = () => {
-    gameStart.player1Score.textContent = `Player X: ${gameStart.player1.playerScore}`;
-    gameStart.player2Score.textContent = `Player O: ${gameStart.player2.playerScore}`;
+    gameStart.player1Score.textContent = `${getPlayer1Name.value}: ${gameStart.player1.playerScore}`;
+    gameStart.player2Score.textContent = `${getPlayer2Name.value}: ${gameStart.player2.playerScore}`;
   };
   const updateRound = () => {
     const currentRound = document.querySelector("#current-round");
