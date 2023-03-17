@@ -6,12 +6,6 @@
 }
 
 body {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   font-family: "Courier New", sans-serif;
 }
 
@@ -23,6 +17,20 @@ body {
 .container {
   display: flex;
   align-items: center;
+}
+
+/*---------------- TITLE ----------------*/
+.main-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}
+
+.title-logo {
+  color: white;
+  font-size: 5vw;
 }
 
 /*---------------- HEADER ----------------*/
@@ -38,6 +46,15 @@ header h2 {
 }
 
 /*---------------- GAMEBOARD ----------------*/
+.main-game {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .game-logo {
   font-size: 5vw;
 }
