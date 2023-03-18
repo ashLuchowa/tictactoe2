@@ -35,8 +35,10 @@ body {
 }
 
 .title-header {
-  color: white;
-  font-size: 10vw;
+  color: #000000;
+  -webkit-text-stroke: 2px white;
+  text-shadow: 10px 13px white, 0 1px white, 1px 0 black, 0 -1px white;
+  font-size: 12vw;
 }
 
 form {
@@ -85,6 +87,10 @@ header h2 {
 }
 
 .game-logo {
+  color: #ffffff;
+  -webkit-text-stroke: 4px black;
+  text-shadow: 10px 20px black, 0 1px black, 1px 0 black, 0 -1px black;
+  /* text-shadow: 23px 5px 0 #000000; */
   font-size: 5vw;
 }
 
@@ -175,8 +181,9 @@ header button {
   cursor: pointer;
   background-color: white;
   color: black;
-  border: 2px solid black;
-  font-size: 15px;
+  border: 5px solid black;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 header button:hover {
