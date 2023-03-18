@@ -34,7 +34,7 @@ const gameStart = (() => {
   };
 })();
 
-//Input player names and click play Module
+//---- Input player names and click play Module ----//
 const updateName = (() => {
   submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -43,7 +43,7 @@ const updateName = (() => {
     setTimeout(() => {
       mainTitle.style.zIndex = '-1';
     }, 200);
-    
+
     gameStart.player1Score.textContent = `${getPlayer1Name.value}: 0`;
     gameStart.player2Score.textContent = `${getPlayer2Name.value}: 0`; 
     if (getPlayer1Name.value === '' && getPlayer2Name.value === '') {
@@ -189,6 +189,7 @@ const updateUI = (() => {
   return { updateScore, updateRound };
 })();
 
+//---- Reset Module ----//
 const resetGame = (() => {
   const resetBtn = document.querySelector('header button');
   resetBtn.addEventListener('click', () => {
