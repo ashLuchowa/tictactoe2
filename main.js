@@ -40,10 +40,12 @@ const updateName = (() => {
     gameStart.player1Score.textContent = `${getPlayer1Name.value}: 0`;
     gameStart.player2Score.textContent = `${getPlayer2Name.value}: 0`;
 
-    if (getPlayer1Name.value === '') {
+    if (getPlayer1Name.value === '' && getPlayer2Name.value === '') {
       gameStart.player1Score.textContent = 'Player X: 0';
-    }
-    if (getPlayer2Name.value === '') {
+      gameStart.player2Score.textContent = 'Player O: 0';
+    } else if (getPlayer1Name.value === '') {
+      gameStart.player1Score.textContent = 'Player X: 0';
+    } else if (getPlayer2Name.value === '') {
       gameStart.player2Score.textContent = 'Player O: 0';
     }
   });
