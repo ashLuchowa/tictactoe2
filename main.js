@@ -122,10 +122,10 @@ const gameConclusion = (() => {
     const playerWinText = document.querySelector(".next-round-btn h3");
     if (playerID === "X") {
       gameStart.player1.playerScore++;
-      playerWinText.textContent = `Player 1 wins!`;
+      playerWinText.textContent = `${playerID} wins!`;
     } else {
       gameStart.player2.playerScore++;
-      playerWinText.textContent = `Player 2 wins!`;
+      playerWinText.textContent = `${playerID} wins!`;
     }
     updateUI.updateScore();
     updateUI.updateRound();
