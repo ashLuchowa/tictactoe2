@@ -38,7 +38,12 @@ const gameStart = (() => {
 const updateName = (() => {
   submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    mainTitle.style.display = 'none';
+    mainTitle.style.opacity = '0';
+
+    setTimeout(() => {
+      mainTitle.style.zIndex = '-1';
+    }, 200);
+    
     gameStart.player1Score.textContent = `${getPlayer1Name.value}: 0`;
     gameStart.player2Score.textContent = `${getPlayer2Name.value}: 0`; 
     if (getPlayer1Name.value === '' && getPlayer2Name.value === '') {
