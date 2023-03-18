@@ -102,7 +102,7 @@ const gameOperator = (() => {
   };
   setSquareClickEvents();
 
-  return { setSquareClick, handleSquareClick };
+  return { setSquareClick, handleSquareClick, setSquareClickEvents };
 })();
 
 //---- Game Conclusion Module ----//
@@ -127,6 +127,7 @@ const gameConclusion = (() => {
       gameStart.player2.playerScore++;
       playerWinText.textContent = `${playerID} wins!`;
     }
+    
     updateUI.updateScore();
     updateUI.updateRound();
     nextRoundBtn();
@@ -143,7 +144,7 @@ const gameConclusion = (() => {
       blurBackground.style.filter = "blur(8px)";
       nextRoundModal.style.display = "flex";
       nextBtn.textContent = `Round ${gameStart.gameRound}`;
-    }, 400);
+    }, 100);
 
     nextBtn.addEventListener("click", () => {
       resetMainBoard();
