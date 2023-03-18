@@ -183,3 +183,10 @@ const updateUI = (() => {
 
   return { updateScore, updateRound };
 })();
+
+const resetGame = (() => {
+  const resetBtn = document.querySelector('header button');
+  resetBtn.addEventListener('click', () => {
+    window.location.reload();
+  });
+})();

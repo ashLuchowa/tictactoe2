@@ -166,3 +166,18 @@ header h2 {
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
 }
+
+/*---------------- RESET ----------------*/
+header button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  font-size: 15px;
+}
+
+header button:hover {
+  background-color: black;
+  color: white;
+}
