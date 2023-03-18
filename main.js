@@ -1,6 +1,7 @@
 const getPlayer1Name = document.querySelector('#player1');
 const getPlayer2Name = document.querySelector('#player2');
 const submitBtn = document.querySelector('#submit-btn');
+const mainTitle = document.querySelector('.main-title');
 
 //++++ Default Player Object ++++//
 const players = (playerName, playerScore) => {
@@ -37,9 +38,10 @@ const gameStart = (() => {
 const updateName = (() => {
   submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
+    mainTitle.style.display = 'none';
     gameStart.player1Score.textContent = `${getPlayer1Name.value}: 0`;
     gameStart.player2Score.textContent = `${getPlayer2Name.value}: 0`;
-
+  
     if (getPlayer1Name.value === '' && getPlayer2Name.value === '') {
       gameStart.player1Score.textContent = 'Player X: 0';
       gameStart.player2Score.textContent = 'Player O: 0';
