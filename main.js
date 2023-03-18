@@ -40,8 +40,7 @@ const updateName = (() => {
     e.preventDefault();
     mainTitle.style.display = 'none';
     gameStart.player1Score.textContent = `${getPlayer1Name.value}: 0`;
-    gameStart.player2Score.textContent = `${getPlayer2Name.value}: 0`;
-  
+    gameStart.player2Score.textContent = `${getPlayer2Name.value}: 0`; 
     if (getPlayer1Name.value === '' && getPlayer2Name.value === '') {
       gameStart.player1Score.textContent = 'Player X: 0';
       gameStart.player2Score.textContent = 'Player O: 0';
@@ -51,6 +50,7 @@ const updateName = (() => {
       gameStart.player2Score.textContent = 'Player O: 0';
     }
   });
+
 })();
 
 //---- Game Operator Module ----//
@@ -114,21 +114,17 @@ const gameConclusion = (() => {
   }
 
   const playerWinResult = (playerID) => {
+    const playerWinText = document.querySelector(".next-round-btn h3");
     if (playerID === "X") {
       gameStart.player1.playerScore++;
+      playerWinText.textContent = `Player 1 wins!`;
     } else {
       gameStart.player2.playerScore++;
+      playerWinText.textContent = `Player 2 wins!`;
     }
     updateUI.updateScore();
     updateUI.updateRound();
     nextRoundBtn();
-
-    const playerWinText = document.querySelector(".next-round-btn h3");
-    if(playerID === 'X') {
-      playerWinText.textContent = `${getPlayer1Name.value} wins!`;
-    } else {
-      playerWinText.textContent = `${getPlayer2Name.value} wins!`;
-    }
   };
 
   //Next Round Modal
@@ -170,6 +166,14 @@ const updateUI = (() => {
   const updateScore = () => {
     gameStart.player1Score.textContent = `${getPlayer1Name.value}: ${gameStart.player1.playerScore}`;
     gameStart.player2Score.textContent = `${getPlayer2Name.value}: ${gameStart.player2.playerScore}`;
+    if (getPlayer1Name.value === '' && getPlayer2Name.value === '') {
+      gameStart.player1Score.textContent = `Player X: ${gameStart.player1.playerScore}`;
+      gameStart.player2Score.textContent = `Player O: ${gameStart.player2.playerScore}`;
+    } else if (getPlayer1Name.value === '') {
+      gameStart.player1Score.textContent = `Player X: ${gameStart.player1.playerScore}`;
+    } else if (getPlayer2Name.value === '') {
+      gameStart.player2Score.textContent = `Player O: ${gameStart.player2.playerScore}`;
+    }
   };
   const updateRound = () => {
     const currentRound = document.querySelector("#current-round");
